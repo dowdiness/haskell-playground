@@ -50,13 +50,29 @@ extra-doc-files:    CHANGELOG.md
 -- Extra source files to be distributed with the package, such as examples, or a tutorial module.
 -- extra-source-files:
 
-common warnings
-    ghc-options: -Wall
+common all
+    ghc-options: -Wall -Wno-unused-top-binds
+    build-depends:    base ^>=4.18.3.0
+    default-language: GHC2021
+
+common executable
+    import:           all
+    build-depends:    pearls
+
+library
+    import:           all
+    hs-source-dirs:   src
+    exposed-modules:  Operators
 
 executable minfree
-    import:           warnings
+    import:           executable
     main-is:          Minfree.hs
     ghc-options: -main-is Minfree.main
-    build-depends:    base ^>=4.18.3.0, array
+    build-depends:    array
     hs-source-dirs:   app/Ch1
-    default-language: GHC2021
+
+executable surpasser
+    import:           executable
+    main-is:          Surpasser.hs
+    ghc-options: -main-is Surpasser.main
+    hs-source-dirs:   app/Ch2
