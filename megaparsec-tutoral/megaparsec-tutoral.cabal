@@ -1,4 +1,4 @@
-cabal-version: 1.12
+cabal-version: 3.4
 
 -- This file has been generated from package.yaml by hpack version 0.35.1.
 --
@@ -6,22 +6,15 @@ cabal-version: 1.12
 
 name:           megaparsec-tutoral
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/dowdiness/megaparsec-tutoral#readme>
-homepage:       https://github.com/dowdiness/megaparsec-tutoral#readme
-bug-reports:    https://github.com/dowdiness/megaparsec-tutoral/issues
 author:         Koji Ishimoto
 maintainer:     koji.ishimoto@gmail.com
 copyright:      2023 Koji Ishimoto
-license:        BSD3
+license:        BSD-3-Clause
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
     CHANGELOG.md
-
-source-repository head
-  type: git
-  location: https://github.com/dowdiness/megaparsec-tutoral
 
 library
   exposed-modules:
@@ -35,7 +28,7 @@ library
       base >=4.7 && <5
     , megaparsec
     , text
-  default-language: GHC2021
+  default-language: GHC2024
 
 executable megaparsec-tutoral-exe
   main-is: Main.hs
@@ -49,7 +42,7 @@ executable megaparsec-tutoral-exe
     , megaparsec
     , megaparsec-tutoral
     , text
-  default-language: GHC2021
+  default-language: GHC2024
 
 test-suite megaparsec-tutoral-test
   type: exitcode-stdio-1.0
@@ -66,4 +59,4 @@ test-suite megaparsec-tutoral-test
     , text
     , tasty
     , tasty-hunit
-  default-language: GHC2021
+  default-language: GHC2024
